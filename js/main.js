@@ -14,3 +14,26 @@ search_input.addEventListener('blur', function() {
     search_element.classList.remove('focused');
     search_input.setAttribute('placeholder', ''); /* focus 해제 시 다시 지워주는 것 */
 });
+
+const badge_element = document.querySelector('header .badges');
+
+/* window : 브라우저가 가지는 명령*/
+window.addEventListener('scroll', _.throttle( function () {
+    /*throttle : 일정 시간마다 한번씩 실행시켜서 부하 방지하는 기능*/
+    /*숫자는 ms 단위*/
+    console.log(window.scrollY);
+    if (window.scrollY > 500) {
+        // 배지를 숨기기
+        // gsap.to(요소, 지속시간(s 단위), 요소)
+        gsap.to(badge_element, .6, {
+            opacity: 0,
+            display: 'none'
+        });
+    } else {
+        // 배지 보이기
+        gsap.to(badge_element, .6, {
+            opacity: 1,
+            display: 'block'
+        });
+    }
+}, 300));

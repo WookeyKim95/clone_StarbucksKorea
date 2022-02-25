@@ -439,6 +439,7 @@ header .badges .badge {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .4s;
 }
 
 .notice .notice-line .inner .inner__right .toggle-promotion .material-icons {

@@ -81,13 +81,18 @@ const promotion_toggle_button = document.querySelector('.toggle-promotion');
 let is_promotion_hidden = false;
 
 let promotion_change = function () {
+    let toggle_button_up_down = document.querySelector('.toggle-promotion .material-icons') // 상태별 버튼의 방향을 바꾸기 위함.
     is_promotion_hidden = !is_promotion_hidden;
     // 값이 반대가 되게 해라, 즉 지금 상태에선 False에서 True로 바꾸어라.
     if (is_promotion_hidden) {
         // true : 숨김 처리
         promotion_element.classList.add('hide');
+        promotion_toggle_button.classList.add('.hide');
+        toggle_button_up_down.innerHTML='download';
     } else {
         // false : 숨김 해제
         promotion_element.classList.remove('hide');
+        promotion_toggle_button.classList.remove('.hide');
+        toggle_button_up_down.innerHTML='upload';
     }
 };

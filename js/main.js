@@ -24,7 +24,7 @@ window.addEventListener('scroll', _.throttle( function () {
     console.log(window.scrollY);
     if (window.scrollY > 500) {
         // 배지를 숨기기
-        // gsap.to(요소, 지속시간(s 단위), 요소)
+        // gsap.to(요소, 지속시간(s 단위), 옵션)
         gsap.to(badge_element, .6, {
             opacity: 0,
             display: 'none'
@@ -37,3 +37,13 @@ window.addEventListener('scroll', _.throttle( function () {
         });
     }
 }, 300));
+
+const fade_elements = document.querySelectorAll('.visual .fade-in');
+fade_elements.forEach(function (fade_element, index) {
+    // gsap.to(요소, 지속시간(s 단위), 옵션)
+    gsap.to(fade_element, .6, {
+        delay: (index + 1) * .7, // 각 인덱스에 있는 요소가 시작 시간은 동시라서 순차적으로 나타내려면 index를 곱해야함!
+                                // 0.7, 1.4, 2.1, 2.7 초 뒤에 각각!
+        opacity: 1
+    });
+})

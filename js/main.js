@@ -75,6 +75,20 @@ new Swiper('.promotion .swiper-container', {
 });
 
 
+// Awards의 스와이퍼
+
+new Swiper('.awards .swiper-container', {
+    direction: 'horizontal',
+    autoplay: true,
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 5,
+    navigation: {
+        prevEl: '.awards .swiper-prev',
+        nextEl: '.awards .swiper-next',
+    }
+})
+
 const promotion_element = document.querySelector('.promotion');
 const promotion_toggle_button = document.querySelector('.toggle-promotion');
 
@@ -119,3 +133,18 @@ function floating_object(selector, delay, size) {
 floating_object('.floating1', 1, 15);
 floating_object('.floating2', .5, 15);
 floating_object('.floating3', 1.5, 20);
+
+//스크롤 애니메이션
+
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEl) {
+    new ScrollMagic
+      .Scene({
+          triggerElement: spyEl, // 보여짐 여부를 감시할 요소 지정.
+          triggerHook: .8, // 뷰포트 기준으로 유효 지점 판단 0.5가 중간지점. 맨 위가 0, 맨 밑이 1. 그래서 0.8은 위에서 밑으로 80%
+      })
+      .setClassToggle(spyEl, 'show') // 조건을 만족하면 show라는 클래스를 추가하고 삭제함.
+      .addTo(new ScrollMagic.Controller()); // 특정요소 감시메소드, 화면에 보이나 안보이나 감지함.
+      // 이렇게 메소드를 연달아 쓰는 것을 메소드체이닝이라고하는데 가독성을 높이기 위해 줄을 바꿈.
+
+});

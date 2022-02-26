@@ -96,3 +96,26 @@ let promotion_change = function () {
         toggle_button_up_down.innerHTML='upload';
     }
 };
+
+
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+    // `.toFixed()`를 통해 반환된 문자 데이터를,
+    // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+  }
+function floating_object(selector, delay, size) {
+    //gsap.to(요소, 시간, 옵션)
+    gsap.to(selector, random(1.5, 2.5), { // random에서 실행한 함수로 반환 된 값으로 실행.
+        // 옵션
+        y: 20,
+        repeat: -1, // -1 : 무한반복
+        yoyo: true, // 내려갔다가 올라갔다가 하는 옵션
+        ease: Power1.easeInOut, // 부드럽게 시작 부드럽게 종료를 해주는 옵션. https://greensock.com/docs/v2/Easing
+        delay: random(0, 1.5), // 애니메이션 동작 시간
+    })
+}
+
+floating_object('.floating1', 1, 15);
+floating_object('.floating2', .5, 15);
+floating_object('.floating3', 1.5, 20);

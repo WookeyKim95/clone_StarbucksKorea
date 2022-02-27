@@ -23,7 +23,7 @@ const to_top_el = document.querySelector('#to_top');
 window.addEventListener('scroll', _.throttle( function () {
     /*throttle : 일정 시간마다 한번씩 실행시켜서 부하 방지하는 기능*/
     /*숫자는 ms 단위*/
-    console.log(window.scrollY);
+
     if (window.scrollY > 500) {
         // 배지를 숨기기
         // to top 버튼이 나타나는 스크립트

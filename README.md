@@ -13,3 +13,8 @@ clone project : making Webpage of starbucks korea
 
 2022-02-26 : added slide animation and sections
 [contents](https://wookeykim95.github.io/project/2022/02/26/project-clone_starbucks_3.html)
+
+2022-02-27 : added footer, to_top button and animation of toggle button<br/>
+(completed coding!)<br/>
+
+[contents](https://wookeykim95.github.io/project/2022/02/27/project-clone_starbucks_4.html)

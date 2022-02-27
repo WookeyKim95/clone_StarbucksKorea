@@ -15,7 +15,9 @@ search_input.addEventListener('blur', function() {
     search_input.setAttribute('placeholder', ''); /* focus 해제 시 다시 지워주는 것 */
 });
 
+// 스크롤에 따라 나타나고 사라질 요소 지정
 const badge_element = document.querySelector('header .badges');
+const to_top_el = document.querySelector('#to_top');
 
 /* window : 브라우저가 가지는 명령*/
 window.addEventListener('scroll', _.throttle( function () {
@@ -24,19 +26,35 @@ window.addEventListener('scroll', _.throttle( function () {
     console.log(window.scrollY);
     if (window.scrollY > 500) {
         // 배지를 숨기기
+        // to top 버튼이 나타나는 스크립트
         // gsap.to(요소, 지속시간(s 단위), 옵션)
         gsap.to(badge_element, .6, {
             opacity: 0,
             display: 'none'
+        })
+        gsap.to(to_top_el, .2, {
+            x: -100
         });
     } else {
         // 배지 보이기
+        // to top 버튼이 숨기는 스크립트
         gsap.to(badge_element, .6, {
             opacity: 1,
             display: 'block'
         });
+        gsap.to(to_top_el, .2, {
+            x: 100
+        })
     }
 }, 300));
+
+//gsap의 ScrollTo 플러그인 필요
+
+to_top_el.addEventListener('click', function () {
+    gsap.to(window, .7, {
+        scrollTo : 0
+    });
+})
 
 const fade_elements = document.querySelectorAll('.visual .fade-in');
 fade_elements.forEach(function (fade_element, index) {
@@ -47,6 +65,8 @@ fade_elements.forEach(function (fade_element, index) {
         opacity: 1
     });
 });
+
+
 
 // new Swiper('선택자', {옵션})
 new Swiper('.notice-line .swiper-container', {
@@ -102,12 +122,12 @@ let promotion_change = function () {
         // true : 숨김 처리
         promotion_element.classList.add('hide');
         promotion_toggle_button.classList.add('.hide');
-        toggle_button_up_down.innerHTML='download';
+        toggle_button_up_down.innerHTML='upload';
     } else {
         // false : 숨김 해제
         promotion_element.classList.remove('hide');
         promotion_toggle_button.classList.remove('.hide');
-        toggle_button_up_down.innerHTML='upload';
+        toggle_button_up_down.innerHTML='download';
     }
 };
 
@@ -148,3 +168,11 @@ spyEls.forEach(function (spyEl) {
       // 이렇게 메소드를 연달아 쓰는 것을 메소드체이닝이라고하는데 가독성을 높이기 위해 줄을 바꿈.
 
 });
+
+
+// 현재 몇년도인지 자동으로 계산하는 코드
+
+const this_year = document.querySelector('.this-year');
+
+this_year.textContent = new Date().getFullYear();
+// 올해는 2022라는 숫자가 출력 될 것임.

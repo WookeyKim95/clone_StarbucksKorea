@@ -1,6 +1,8 @@
 # clone_StarbucksKorea
 clone project : making Webpage of starbucks korea
 
+reference link : [ParkYoungWoong's Github](https://github.com/Parkyoungwoong/starbucks-vanilla-app)
+
 # developing history
 
 2022-02-23 : made this repistory

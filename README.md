@@ -21,6 +21,8 @@ reference link : [ParkYoungWoong's Github](https://github.com/Parkyoungwoong/sta
 
 [contents](https://wookeykim95.github.io/project/2022/02/27/project-clone_starbucks_4.html)
 
-2022-02-28 : fixed, misprint<br/>
+2022-02-28 : fixed, misprint and made a new branch(signin)<br/>
 
-such as herf -> href and some links
+such as herf -> href and some links<br/>
+
+2022-03-01 : added sign in page

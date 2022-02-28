@@ -5,7 +5,7 @@ reference link : [ParkYoungWoong's Github](https://github.com/Parkyoungwoong/sta
 
 # developing history
 
-2022-02-23 : made this repistory
+2022-02-23 : made this repository
 
 2022-02-24 : added header menu and badges
 [contents](https://wookeykim95.github.io/project/2022/02/24/project-clone_starbucks.html)
@@ -20,3 +20,7 @@ reference link : [ParkYoungWoong's Github](https://github.com/Parkyoungwoong/sta
 (completed coding!)<br/>
 
 [contents](https://wookeykim95.github.io/project/2022/02/27/project-clone_starbucks_4.html)
+
+2022-02-28 : fixed, misprint<br/>
+
+such as herf -> href and some links

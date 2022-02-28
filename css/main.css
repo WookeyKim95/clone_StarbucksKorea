@@ -180,6 +180,7 @@ header .sub-menu ul.menu li a {
 
 header .sub-menu ul.menu li a:hover {
     color: #000;
+    cursor: pointer;
 }
 
 header .sub-menu .search {

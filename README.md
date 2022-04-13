@@ -1,6 +1,8 @@
 # clone_StarbucksKorea
 clone project : making Webpage of starbucks korea
 
+**made this elemental clone project for studying and practicing HTML/CSS/JS**
+
 reference link : [ParkYoungWoong's Github](https://github.com/Parkyoungwoong/starbucks-vanilla-app)
 
 # developing history
